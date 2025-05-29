@@ -103,7 +103,7 @@ nav ul li a:hover {
     position: relative;
     overflow: hidden;
     background-color: white;
-    background-image: url('images/image.jpg'); /* 📌 ton image ici */
+    background-image: url('images/image3.jpg'); /* 📌 ton image ici */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right center;
@@ -125,11 +125,11 @@ nav ul li a:hover {
     font-size: 42px;
     font-weight: 700;
     margin-bottom: 55px;
-    text-align: right; /* Ajouté pour aligner le titre principal à droite */
+    text-align: left; /* Ajouté pour aligner le titre principal à droite */
 }
 
 .hero h1 span {
-    text-align: right; /* Changé de 'left' à 'right' */
+    text-align: left; /* Changé de 'left' à 'right' */
     display: block;
     font-size: 20px;
     font-weight: 400;
@@ -301,6 +301,7 @@ nav ul li a:hover {
 
 /* Footer Styles */
 .site-footer {
+    background-image: url('images/im.jpg');
     background-color: #2c3e50;
     color: #ecf0f1;
     padding: 60px 0 30px;
