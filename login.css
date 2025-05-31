@@ -61,7 +61,7 @@ nav a.active,
     /* LEFT PANEL */
     .left-panel {
     flex: 1;
-    background: linear-gradient(180deg, #4080f7, #2962f2);
+    background: linear-gradient(to bottom, #1a0d0a, #2e130d, #4b1e0d, #661a0b, #802000);
     color: white;
     padding: 60px 40px;
     display: flex;
@@ -234,7 +234,7 @@ nav a.active,
     }
 /* Footer Styles */
 .site-footer {
-    background-image: url('images/im.jpg');
+    background-image: url('images/imageFooter.png');
     color: #ecf0f1;
     padding: 60px 0 30px;
     font-size: 14px;

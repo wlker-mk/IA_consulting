@@ -101,7 +101,7 @@ body {
     position: relative;
     min-height: 100vh;
     background-color: white;
-    background-image: url('images/image3.jpg');
+    background-image: url('images/imageHero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right center;
@@ -147,7 +147,7 @@ body {
     font-weight: 400;
     color: white;
     margin-top: 15px; /* Espace entre titre et sous-titre */
-    margin-bottom: 60px; /* Nouveau: espace avant le CTA */
+    margin-bottom: 130px; /* Nouveau: espace avant le CTA */
     max-width: 600px;
     line-height: 1.6;
 }
@@ -335,7 +335,11 @@ body {
     background-color: #f8f9fa70;
     
 }
-
+.container h2, p {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -511,11 +515,19 @@ body {
 /* ========== AI JOURNEY SECTION ========== */
 .ai-journey {
     padding: 80px 0;
-    background-color: #2c3e50;
+    background: linear-gradient(to bottom, #1a0d0a, #2e130d, #4b1e0d, #661a0b, #802000);
     color: white;
     text-align: center;
 }
-
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
 .ai-journey h2 {
     color: white;
     margin-bottom: 20px;
@@ -593,7 +605,7 @@ body {
 
 /* Footer Styles */
 .site-footer {
-    background-image: url('images/im.jpg');
+    background-image: url('images/imageFooter.png');
     background-color: #2c3e50;
     color: #ecf0f1;
     padding: 60px 0 30px;
