@@ -1,5 +1,3 @@
-/* styles.css - Version complète et mise à jour */
-
 /* ========== GLOBAL STYLES ========== */
 * {
     margin: 0;
@@ -194,7 +192,6 @@ nav ul li a:hover {
     color: #2980b9;
     transform: translateX(5px);
 }
-
 /* ========== FOOTER STYLES ========== */
 .site-footer {
 background-image: url('images/im.jpg');
