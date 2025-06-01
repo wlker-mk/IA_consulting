@@ -381,6 +381,24 @@ body {
 .client-info {
     margin-top: auto; /* Pousse vers le bas */
 }
+.client-info1 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color :black;
+}
+
+.client-info1 strong {
+    color: #2c3e50;
+    display: block;
+}
+
+.client-info1 span {
+    color: #7f8c8d;
+    font-size: 14px;
+    gap: 10px;
+    margin: 18px;
+}
 
 .client-info strong {
     color: #2c3e50;
