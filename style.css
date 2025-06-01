@@ -347,10 +347,11 @@ body {
 }
 
 .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    display: flex; /* Changé de grid à flex */
     gap: 30px;
-    align-items: start; /* Alignement en haut */
+    align-items: start;
+    width: max-content; /* Permet au contenu de déborder */
+    will-change: transform; /* Optimisation pour l'animation */
 }
 
 .testimonial-card {
@@ -358,9 +359,8 @@ body {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    height: 100%; /* Hauteur égale */
-    display: flex;
-    flex-direction: column;
+    width: 340px; /* Largeur fixe pour chaque carte */
+    flex-shrink: 0; /* Empêche le rétrécissement */
 }
 
 .rating {
@@ -381,24 +381,6 @@ body {
 .client-info {
     margin-top: auto; /* Pousse vers le bas */
 }
-.client-info1 {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color :black;
-}
-
-.client-info1 strong {
-    color: #2c3e50;
-    display: block;
-}
-
-.client-info1 span {
-    color: #7f8c8d;
-    font-size: 14px;
-    gap: 10px;
-    margin: 18px;
-}
 
 .client-info strong {
     color: #2c3e50;
@@ -410,12 +392,142 @@ body {
     font-size: 14px;
 }
 
+
+/* client info1 */
+/* Style de base */
+.consultant-profile {
+    padding: 5rem 0;
+    background-color: #f8fafc;
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.profile-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    line-height: 1.3;
+}
+
+.profile-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+/* Grille des consultants */
+.consultant-grid {
+    display: flex;
+    gap: 30px;
+    align-items: start;
+    width: max-content;
+    will-change: transform;
+    padding: 20px 0;
+}
+
+/* Carte consultant */
+.consultant-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    width: 360px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.consultant-photo-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.consultant-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid #3498db;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.consultant-info {
+    width: 100%;
+    text-align: center;
+}
+
+.consultant-name {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.consultant-title {
+    color: #3498db;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.consultant-company {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.consultant-specialty {
+    color: #2c3e50;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.consultant-quote {
+    font-style: italic;
+    color: #7f8c8d;
+    line-height: 1.6;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
-    .testimonial-grid {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-        margin: 0 auto;
+    .consultant-grid {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .consultant-card {
+        width: 100%;
+        max-width: 400px;
     }
 }
 /* ========== AI SERVICES SECTION ========== */
