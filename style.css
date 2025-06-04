@@ -44,10 +44,15 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 30px;
+    margin-left: 20px;
     font-weight: 500;
 }
-
+.propos {
+    margin-left: 20px;
+    font-weight: 500;
+    color:black;
+    text-decoration: none; /* Ajout pour consistance */
+}
 nav ul li a {
     text-decoration: none;
     color: black;
@@ -64,7 +69,7 @@ nav ul li a:hover {
     padding: 8px 18px;
     border-radius: 20px;
     font-weight: 500;
-    margin-left: 20px;
+    margin-left: 3px; /* Changé de 10px à 5px */
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s ease;
@@ -344,18 +349,9 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s;
+    text-align: center;
 }
 
-.secondary-btn {
-    background: white;
-    color: #3498db;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    border: 2px solid #3498db;
-    transition: all 0.3s;
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -499,7 +495,7 @@ body {
 .testimonials {
     padding: 80px 0;
     background-color: #f8f9fa70;
-    
+    overflow: hidden;
 }
 .container h2 {
     text-align: center;
@@ -517,23 +513,26 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    overflow: hidden; /* Assure que rien ne dépasse */
+    position: relative;
 }
 
 .testimonial-grid {
     display: flex; /* Changé de grid à flex */
     gap: 30px;
-    align-items: start;
-    width: max-content; /* Permet au contenu de déborder */
-    will-change: transform; /* Optimisation pour l'animation */
+    align-items: stretch;
 }
 
 .testimonial-card {
-    background-color: white;
+    width: 350px; /* Largeur fixe pour conserver la forme */
+    min-width: 350px; /* Empêche le rétrécissement */
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    width: 340px; /* Largeur fixe pour chaque carte */
-    flex-shrink: 0; /* Empêche le rétrécissement */
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Hauteur naturelle */
 }
 
 .rating {
@@ -553,6 +552,7 @@ body {
 
 .client-info {
     margin-top: auto; /* Pousse vers le bas */
+    display: block;
 }
 
 .client-info strong {

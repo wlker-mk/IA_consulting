@@ -1,36 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
     const testimonialGrid = document.querySelector('.testimonial-grid');
     const cards = document.querySelectorAll('.testimonial-card');
-    const cardWidth = cards[0].offsetWidth + 30; // Largeur d'une carte + gap
-    let currentPosition = 0;
-    const totalCards = cards.length;
+    const container = document.querySelector('.container');
     
-    // Ajuster la largeur du conteneur pour qu'il puisse contenir toutes les cartes
-    testimonialGrid.style.width = `${totalCards * cardWidth}px`;
-    function slide() {
-        currentPosition -= 1; // Déplace de 1px à gauche
+    // Calculer la largeur exacte d'une carte + gap
+    const cardStyle = window.getComputedStyle(cards[0]);
+    const gapValue = parseInt(window.getComputedStyle(testimonialGrid).gap);
+    const cardWidth = cards[0].offsetWidth + gapValue;
+    
+    // Dupliquer les cartes pour l'effet de boucle
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        testimonialGrid.appendChild(clone);
+    });
+    
+    // Animation fluide
+    let scrollPos = 0;
+    const speed = 1;
+    
+    function animate() {
+        scrollPos += speed;
         
-        // Si on a défilé l'équivalent d'une carte, on remet la première carte à la fin
-        if (currentPosition <= -cardWidth) {
-            currentPosition += cardWidth;
-            testimonialGrid.appendChild(testimonialGrid.children[0]);
-            testimonialGrid.style.transition = 'none';
-            testimonialGrid.style.transform = `translateX(${currentPosition}px)`;
-            // Force un reflow
-            void testimonialGrid.offsetWidth;
+        if (scrollPos >= cardWidth * cards.length) {
+            scrollPos = 0;
         }
         
-        testimonialGrid.style.transition = 'transform 0.5s linear';
-        testimonialGrid.style.transform = `translateX(${currentPosition}px)`;
-        
-        requestAnimationFrame(slide);
+        testimonialGrid.style.transform = `translateX(-${scrollPos}px)`;
+        requestAnimationFrame(animate);
     }
-
-    // Démarrer l'animation après un court délai
-    setTimeout(() => {
-        requestAnimationFrame(slide);
-    }, 1000);
-}); 
+    
+    // Styles initiaux
+    testimonialGrid.style.width = `${cardWidth * cards.length * 2}px`;
+    container.style.overflow = 'hidden';
+    animate();
+});
 // Path: stats.js
 // stats.js
 // Animation des statistiques
